@@ -49,6 +49,7 @@ class ProductController extends Controller
         $product->cost = $request->cost;
         $product->inventory = $request->inventory;
         $product->availability = $request->availability;
+        $product->category_id = $request->category_id;
         $product->save();
 
         return redirect('/products');
