@@ -43,7 +43,11 @@
                         <div class="col-sm-3">
                             <select id="category_id" name="category_id" class="form-control" required>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}" {{ $category->id == $product->category->id ? 'selected' : '' }} > {{ $category->name }}</option>
+                                    @if($product->category != null)
+                                        <option value="{{ $category->id }}" {{ $category->id == $product->category->id ? 'selected' : '' }} > {{ $category->name }}</option>
+                                    @else 
+                                        <option value="{{ $category->id }}"> {{ $category->name }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
